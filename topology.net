@@ -1,0 +1,78 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10001
+    [[3725]]
+        image = C:\Users\dilip\Downloads\Compressed\GNS & Packet Tracer\C3725-ADE.BIN
+        ram = 256
+        idlepc = 0x60c076c8
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R2 s0/0
+        x = -405.511147288
+        y = -187.682720164
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R1 s0/0
+        s0/1 = R3 s0/0
+        x = -123.747691321
+        y = -178.443814686
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10101
+    [[3725]]
+        image = C:\Users\dilip\Downloads\Compressed\GNS & Packet Tracer\C3725-ADE.BIN
+        ram = 256
+        idlepc = 0x60c076c8
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R3]]
+        model = 3725
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        wic0/0 = WIC-2T
+        s0/0 = R2 s0/1
+        x = 153.021861301
+        y = -178.335839204
+        z = 1.0
+        hx = 7.5
+        hy = -39.0
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 2.0
+    m22 = 2.0
+    [[NOTE 1]]
+        text = "90.10.1.1/24\n90.10.2.1/24\n90.10.3.1/24\n"
+        x = 115.258405333
+        y = -126.624891681
+    [[NOTE 2]]
+        text = "1.1.1.0/24"
+        x = -253.144227665
+        y = -230.167568262
+    [[NOTE 3]]
+        text = "2.2.2.0/24"
+        x = 39.5979797464
+        y = -216.025432638
+    [[NOTE 4]]
+        text = "192.168.1.1/24\n192.168.2.1/24\n192.168.3.1/24"
+        x = -427.799602618
+        y = -140.365007051
+    [[NOTE 5]]
+        text = "172.10.1.1/24\n172.10.2.1/24\n172.10.3.1/24\n\n"
+        x = -163.341666454
+        y = -130.666522241
